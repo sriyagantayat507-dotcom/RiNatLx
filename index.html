@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiNat Luxe - Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS moved to style.css -->
+</head>
+
+<body class="signuo-body">
+<div class="background-img"></div>
+<div class="background-overlay"></div>
+<div class="main-content">
+<main class="signup-container">
+<div class="signup-box">
+<div style="text-align:center;margin-bottom:18px;">
+  <img src="logo.jpg" alt="RiNat Luxe Logo" class="logo-circle">
+</div>
+<h1>RiNat Luxe✨</h1>
+<h2>Create Your Account</h2>
+  <form action="#" method="POST">
+     <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div> 
+    <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Min 6 characters" required minlength="6">
+    </div> 
+    <button  type="submit" class="btn signup-btn">Register & See Collection</button>
+    </form>
+            
+    <p class="login-link">
+     Already have an account? <a href="#">Log In</a>
+    </p>
+        <p class="home-link">
+            <a href="main.html" class="btn" style="display:block;margin:20px auto 0;max-width:250px;">See Collection Without Registering</a>
+        </p>
+    </div>
+    </main>
+ 
+    <footer>
+        <p>&copy; 2025 RiNat Luxe. All rights reserved.</p>
+    </footer>          
+<script>
+// Simulate registration and redirect to jewellery1.html
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'main.html';
+});
+</script>
+</body>
+</html>

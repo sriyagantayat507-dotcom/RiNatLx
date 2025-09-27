@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiNat Luxe✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <section class="jewelry-display container">
+            <div style="margin-bottom:30px;">
+                <button id="signature-btn" class="btn-small" style="margin-right:10px;">Signature Collection</button>
+                <button id="ethnic-btn" class="btn-small">Ethnic Collection</button>
+            </div>
+            <h2 id="collection-title">Our Signature Collection</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Product cards will be rendered here by JavaScript -->
+            </div>
+        </section>
+    </div>
+    <script>
+const signatureProducts = [
+  {
+    img: 'jewellry9.jpg',
+    name: 'Starlight Pendant combo',
+    desc: 'A dazzling pendant set featuring star-inspired motifs, perfect for evening wear and special occasions.',
+    price: 'INR 900.00'
+  },
+  {
+    img: 'jewellery8.jpg',
+    name: 'Ocean Glow Anklet',
+    desc: 'A delicate anklet with ocean-blue stones, bringing a touch of the sea to your style.',
+    price: 'INR 450.00'
+  },
+  {
+    img: 'jewellery0.jpg',
+    name: 'Celeste Heart Pendant',
+    desc: 'A charming heart-shaped pendant with a celestial touch, ideal for gifting loved ones.',
+    price: 'INR 379.00'
+  },
+  {
+    img: 'jewellry7.jpg',
+    name: 'Golden Leaf Brooch',
+    desc: 'An elegant brooch shaped like a golden leaf, perfect for adding sophistication to any outfit.',
+    price: 'INR 499.00'
+  }
+];
+
+const ethnicProducts = [
+  {
+    img: 'ethnic.jpg',
+    name: 'Ethnic Gold Jhumka',
+    desc: 'Traditional gold-plated jhumka earrings, perfect for festive occasions.',
+    price: 'INR 299.00'
+  },
+  {
+    img: 'ethnic1.jpg',
+    name: 'Kundan Ethnic Necklace',
+    desc: 'Elegant kundan necklace set with matching earrings for a royal look.',
+    price: 'INR 499.00'
+  },
+  {
+    img: 'ethnic2.jpg',
+    name: 'Meenakari necklace',
+    desc: 'Colorful meenakari necklace to complement your ethnic attire.',
+    price: 'INR 399.00'
+  },
+  {
+    img: 'ethnic3.jpg',
+    name: 'Pearl Ethnic Earrings',
+    desc: 'Beautiful pearl earrings for weddings and celebrations.',
+    price: 'INR 249.00'
+  }
+];
+
+const productGrid = document.getElementById('product-grid');
+const ethnicBtn = document.getElementById('ethnic-btn');
+const signatureBtn = document.getElementById('signature-btn');
+const collectionTitle = document.getElementById('collection-title');
+
+function renderProducts(products, title) {
+  productGrid.innerHTML = products.map(p => `
+    <div class="product-card">
+  <img src="${p.img}" alt="${p.name}" style="width:100%;max-width:120px;height:160px;object-fit:cover;display:block;margin-bottom:10px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.07);margin-left:auto;margin-right:auto;">
+      <h3>${p.name}</h3>
+      <p class="description">${p.desc}</p>
+      <p class="price">${p.price}</p>
+      <button class="btn-small add-to-cart" data-product="${p.name}">Add to Cart</button>
+    </div>
+  `).join('');
+  collectionTitle.textContent = title;
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const product = this.getAttribute('data-product');
+      alert(product + ' added to cart!');
+    });
+  });
+}
+
+signatureBtn.addEventListener('click', function() {
+  renderProducts(signatureProducts, 'Our Signature Collection');
+});
+
+ethnicBtn.addEventListener('click', function() {
+  renderProducts(ethnicProducts, 'Our Ethnic Collection');
+});
+
+// Initial render
+renderProducts(signatureProducts, 'Our Signature Collection');
+    </script>
+    <footer style="margin-top:48px;background:#f8f5f1;padding:32px 0;text-align:center;border-top:1px solid #e0dcd7;">
+  <h3 style="color:#b08968;margin-bottom:10px;">Contact Us</h3>
+  <div style="font-size:1.1em;color:#5d4037;margin-bottom:8px;">
+    RiNat Luxe, 123 Fashion Street, Mumbai, India<br>
+    Email: <a href="mailto:info@rinatluxe.com" style="color:#b08968;text-decoration:none;">info@rinatluxe.com</a><br>
+  Phone: <a href="tel:+911234567890" style="color:#b08968;text-decoration:none;">+91 12345 67890</a>
+  </div>
+  <div style="font-size:0.95em;color:#666;margin-top:10px;">We'd love to hear from you! Reach out for queries, feedback, or collaborations.</div>
+</footer>
+</body>
+</html>
